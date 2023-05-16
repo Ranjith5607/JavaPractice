@@ -8,6 +8,7 @@ package abstractEx;
 abstract  class Computer extends Calc{
 
 }
+
 class Main
 {
     public static void main(String[] args) {
