@@ -26,10 +26,9 @@ public class SortList {
 		System.out.println(Collections.min(listofIntegers2));
 
 		// Second highest out put
-		System.out.print(listofIntegers2);
 		System.out.println(" ");
 		Collections.sort(listofIntegers2);
-		System.out.println(listofIntegers2.get(listofIntegers2.size()-2));
+		System.out.println("Second highest out put: " + listofIntegers2.get(listofIntegers2.size() - 2));
 
 	}
 

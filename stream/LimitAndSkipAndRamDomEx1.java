@@ -5,17 +5,19 @@ import java.util.stream.Stream;
 
 public class LimitAndSkipAndRamDomEx1 {
 
-    public static void main(String[] args) {
-        Stream<Integer>  integerStream=Stream.of(0,1,2,3,4,5,6,7,8,9).skip(6);
+	public static void main(String[] args) {
+		Stream<Integer> integerStream = Stream.of(0, 1, 2, 3, 4, 5, 6, 7, 8, 9).skip(6);
 
-        integerStream.forEach((r)->System.out.println(r));
+		integerStream.forEach((r) -> System.out.print(r));
 
-       Stream<Integer> limitStream=Stream.of(0,1,2,3,4,5,6,7,8,9).limit(6);
-        limitStream.forEach((r)->System.out.println(r));
+		System.out.println("");
+		Stream<Integer> limitStream = Stream.of(0, 1, 2, 3, 4, 5, 6, 7, 8, 9).limit(6);
+		limitStream.forEach((r) -> System.out.print(r));
+		System.out.println("");
 
-        Random  ramdom =  new Random();
-        System.out.println("===========================");
-        ramdom.ints().limit(4).forEach((r->System.out.println(r)));
+		Random ramdom = new Random();
+		System.out.println("===========================");
+		ramdom.ints().limit(4).forEach((i) -> System.out.println(i));
 
-    }
+	}
 }

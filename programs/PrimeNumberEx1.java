@@ -14,10 +14,16 @@ public class PrimeNumberEx1 {
 			}
 
 		}
+
 		if (count > 1) {
 
 		} else {
-			System.out.println(number);
+			if (number == 1) {
+
+			} else {
+				System.out.println(number);
+
+			}
 		}
 
 		count = 0;

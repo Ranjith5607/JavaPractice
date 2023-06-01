@@ -12,44 +12,35 @@ import java.util.stream.Collectors;
 
 public class FindTheDuplicateValuesEx1 {
 	public static void main(String[] args) {
-		String str = "Ranjith Kumar Ranjith";
+
+		// To print the duplicate words
+		String str = "ranjith Kumar Ranjith";
 		List<String> listString = Arrays.stream(str.toUpperCase().split(" ")).collect(Collectors.toList());
-
-		System.out.println(listString);
-
-		// To find the duplicate words
 		Set<String> setObj = new HashSet<>();
-
 		Set<String> collectSetObj = listString.stream().filter(f -> !setObj.add(f)).collect(Collectors.toSet());
-		// print the duplicate words
-		System.out.println(collectSetObj);
+		// To print the words
+		System.out.println("print the duplicate words " + collectSetObj);
 
-		// print the duplicate words and count
-
-		Map<String, Integer> collect = listString.stream()
-				.collect(Collectors.toMap(Function.identity(), f -> 1, Math::addExact));
-
-		String[] split = str.split(" ");
-
+		String[] split = str.toUpperCase().split(" ");
 		List<String> asList = Arrays.asList(split);
-		HashMap<String, Long> collect2 = asList.stream()
+		HashMap<String, Long> collectHashMap = asList.stream()
 				.collect(Collectors.groupingBy(Function.identity(), HashMap::new, Collectors.counting()));
 
-		Set<String> keySet = collect2.keySet();
-
+		Set<String> keySet = collectHashMap.keySet();
 		Iterator<String> iterator = keySet.iterator();
-
 		while (iterator.hasNext()) {
 			String string = (String) iterator.next();
-
-			if (collect2.get(string) > 1) {
-				System.out.println("Key:" + string + " value:" + collect2.get(string));
-
+			if (collectHashMap.get(string) > 1) {
+				System.out.println("Key:" + string + " value:" + collectHashMap.get(string));
 			}
 
 		}
 
-		System.out.println(collect2);
+		// Another way
+		// print the duplicate words and count
+		Map<String, Integer> duplicateWord = Arrays.stream(str.toUpperCase().split(" "))
+				.collect(Collectors.toMap(Function.identity(), f -> 1, Math::addExact));
 
+		System.out.println("print the duplicate words in numbers" + duplicateWord);
 	}
 }

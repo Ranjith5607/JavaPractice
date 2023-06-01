@@ -4,39 +4,36 @@ public class ReverceProgram {
 
 	public static void main(String[] args) {
 
-		String str = "Ranjith";
+		String str1 = "Ranjith";
+		StringBuilder builder1 = new StringBuilder(str1);
+		System.out.println("string builder reverce: " + builder1.reverse());
 
-		int reverce = 0;
+		String str2 = "Ranjith";
 
-		StringBuilder builder1 = new StringBuilder(str);
- 
-		char[] chars = str.toCharArray();
+		char[] chars = str2.toCharArray();
+		System.out.print("tocharArray reverce print: ");
 		for (int i = chars.length - 1; i >= 0; i--) {
-
 			System.out.print(chars[i]);
 		}
 
-		int i = 789359;
+		int i = 123;
 		StringBuilder builder2 = new StringBuilder();
 		builder2.append(i);
 		System.out.println();
-		System.out.println("builder2:" + builder2.reverse());
+		System.out.println("string builder reverce:" + builder2.reverse());
 
-		int i4 = (int) 0.02;
-		System.out.println("=====" + i4);
+		// using loop
+		int number = 123;
+		int reminder = 0;
+		int reverce = 0;
+		while (number > 0) {
 
-		int i3 = 26;
-
-		//
-
-		while (i3 != 0) {
-
-			reverce = reverce * 10 + i3 % 10;
-
-			i3 = i3 / 10;
+			reminder = number % 10;
+			reverce = reverce * 10 + reminder;
+			number = number / 10;
 
 		}
-		System.out.println(reverce);
+		System.out.println("using loop reverce: " + reverce);
 
 	}
 

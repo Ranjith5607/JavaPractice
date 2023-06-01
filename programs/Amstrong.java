@@ -10,6 +10,7 @@ public class Amstrong {
 
 		int number = 153;
 		int number1 = number;
+		int temp = number;
 
 		int result = 0;
 		int i = 0;
@@ -34,7 +35,15 @@ public class Amstrong {
 			number1 = number1 / 10;
 
 		}
-		System.out.println(sum);
+
+		if (temp == sum) {
+
+			System.out.println("it is a amstrong");
+
+		} else {
+			System.out.println("it is not a  amstrong");
+
+		}
 
 	}
 }
