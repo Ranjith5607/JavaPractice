@@ -1,38 +1,27 @@
 package test;
 
-import java.time.LocalDate;
-
-class Base {
-
-	public int i = 1;
-
-	public void call() {
-
-		System.out.println("base call");
-	}
-}
-
-class deveried extends Base {
-
-	public void call() {
-
-		i = 2;
-		System.out.println("base call");
-	}
-}
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
 public class TestEx1 {
 
 	public static void main(String[] args) {
 
-		LocalDate plusDays = LocalDate.now().plusDays(6);
-//		 LocalDate of = LocalDate.with(2014, 0, 30);
-//		 LocalDate of1 = LocalDate.of(2014 );
+		List<Integer> list = new ArrayList<Integer>();
+		for (int i = 1; i <= 10; i++) {
 
-		
-		
-		deveried testEx1 = new deveried();
-		System.out.println(plusDays);
+			list.add(i);
+
+		}
+		System.out.println(list);
+
+		Iterator<Integer> iterator = list.listIterator();
+
+		while (iterator.hasNext()) {
+			Integer integer = (Integer) iterator.next();
+			list.add(11);
+		}
 	}
 
 }

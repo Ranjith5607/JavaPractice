@@ -27,7 +27,7 @@ public class RemoveTheDuplicateValuesEx1 {
 
 		// input[1,2,3,4,3,2]
 		// output[1,2,3,4,3,2]
-		int[] numbers = new int[] { 1, 2, 3, 4, 3, 2 };
+		int[] numbers = new int[] { 1,2,2,3};
 
 		RemoveTheDuplicateValuesEx1.removeDuplicates(numbers);
 

@@ -8,6 +8,8 @@ public class FindTheMissingNumberInArray {
 		for (int i = 0; i < len; i++) {
 			temp[nums[i]]++;
 		}
+		
+		//where = 0 is missing number
 		for (int i = 0; i < len; i++) {
 			if (temp[i] == 0)
 				return i;
