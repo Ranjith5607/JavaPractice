@@ -25,9 +25,10 @@ public class NonReaptingCharacter {
 		}
 		System.out.println("chars in list:"+list);
 
-		//Using collections.frequency() and collectors.counting() to find NONRC
+		//step3: Using collections.frequency() and collectors.counting() to find NONRC
 		HashMap<Character, Long> collect = list.stream().filter(f -> Collections.frequency(list, f) == 1)
 				.collect(Collectors.groupingBy(Function.identity(), HashMap::new, Collectors.counting()));
+
 		System.out.println(collect);
 	}
 
