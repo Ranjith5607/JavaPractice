@@ -7,6 +7,8 @@ import java.util.List;
 
 public class FindTheMinimumAndMaxValue {
 	public static void main(String[] args) {
+
+
 		List<Integer> list = Arrays.asList(10, 2, 3, 4, 5, 6, 7, 8, 9, 1);
 		Collections.sort(list);
 		System.out.println(list.get(0));
@@ -26,6 +28,9 @@ public class FindTheMinimumAndMaxValue {
 		int intValue = list.stream().sorted(Comparator.comparingInt(Integer::intValue).reversed()).skip(1).findFirst().get().intValue();
 		System.out.println(intValue);
 
+		// secondSmallestValue
+		int secondSmallestValue = list.stream().sorted(Comparator.comparingInt(Integer::intValue)).skip(1).findFirst().get().intValue();
+		System.out.println(secondSmallestValue);
 	}
 
 }
